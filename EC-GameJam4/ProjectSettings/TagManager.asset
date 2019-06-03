@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - TriangleLayer
+  - CircleLayer
+  - SquareLayer
   - 
   - 
   - 

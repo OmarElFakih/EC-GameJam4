@@ -15,7 +15,7 @@ public class BlockPivotRotator : Rotator
     private IEnumerator TurnBlock()
     {
         yield return new WaitForSeconds(_secondsToSpin);
-        int _nTurns = Random.Range(-4, 4);
+        int _nTurns = Random.Range(-3, 4);
         SetTargetQua(_nTurns);
     }
 }
