@@ -10,23 +10,34 @@ public class TouchListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         if (Input.touchCount > 0)
         {
-            foreach(Touch t in Input.touches)
-            if (t.phase == TouchPhase.Began) {
-                Debug.Log("tuch detected");
-                if (Camera.main.ScreenToWorldPoint(t.position).x > 0)
+            foreach (Touch t in Input.touches)
+            {
+                Vector3 _tPosition = Camera.main.ScreenToViewportPoint(t.position); 
+
+                if (t.phase == TouchPhase.Began && _tPosition.y < 15)
                 {
-                    rotator1.SetTargetQua(-1);
-                }
-                else
-                {
-                    rotator2.SetTargetQua(1);
+
+                    if (_tPosition.x > 0)
+                    {
+                        rotator1.SetTargetQua(-1);
+                    }
+                    else
+                    {
+                        rotator2.SetTargetQua(1);
+                    }
                 }
             }
             
         }
-
+        /*
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -40,6 +51,6 @@ public class TouchListener : MonoBehaviour
                 rotator2.SetTargetQua(1);
             }
 
-        }
+        }*/
     }
 }
