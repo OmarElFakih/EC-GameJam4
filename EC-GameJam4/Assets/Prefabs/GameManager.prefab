@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugging: 0
+  android: 0
   cManager: {fileID: 0}
   _maxHealth: 6
-  _tripleScoreClip: {fileID: 8300000, guid: 7119cea897d2ddd4f8304af779c86931, type: 3}
+  _fullScoreClip: {fileID: 8300000, guid: 7119cea897d2ddd4f8304af779c86931, type: 3}
   _missClip: {fileID: 8300000, guid: 48029d5e5e70b7c448201cc825d194a2, type: 3}
   _currentScore: 0
 --- !u!82 &5202401616618367362

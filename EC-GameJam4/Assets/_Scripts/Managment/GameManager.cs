@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour //SINGLETON
     public static bool highScore = false;
 
     public bool debugging;
+    public bool android = false;
 
     [HideInInspector]
     public CanvasManager cManager = null;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour //SINGLETON
 
 
     [SerializeField]
-    private AudioClip _tripleScoreClip = null;
+    private AudioClip _fullScoreClip = null;
     [SerializeField]
     private AudioClip _missClip = null;
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour //SINGLETON
 
     private int _maxscore = 0;
     private int _hits = 0;
+    private int _hitsToFullScore = 3;
 
     private bool _canPlayClip = true;
 
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour //SINGLETON
     private void Start()
     {
         GameStart();
+        _hitsToFullScore = android ? 2 : 3;
     }
 
     public void GameStart()
@@ -123,9 +126,9 @@ public class GameManager : MonoBehaviour //SINGLETON
 
         _hits++;
 
-        if (_hits >= 3)
+        if (_hits >= _hitsToFullScore)
         {
-            AudioSource.PlayClipAtPoint(_tripleScoreClip, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(_fullScoreClip, Camera.main.transform.position);
             _hits = 0;
         }
     }

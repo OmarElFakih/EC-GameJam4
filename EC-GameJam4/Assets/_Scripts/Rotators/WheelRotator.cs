@@ -16,7 +16,7 @@ public class WheelRotator : Rotator
         _animator = GetComponent<Animator>();
         
     }
- 
+
 
     private void OnMouseDown()
     {
@@ -26,6 +26,7 @@ public class WheelRotator : Rotator
         }
     }
 
+
     public override void Activate()
     {
         _animator.SetTrigger("Click");
@@ -33,7 +34,7 @@ public class WheelRotator : Rotator
 
     private bool Mayturn()
     {
-        return (canTurn && Time.timeScale != 0 && !GameManager.gameIsOver);
+        return (canTurn && Time.timeScale != 0 && !GameManager.gameIsOver && !GameManager.manager.android);
     }
 
 
