@@ -20,7 +20,7 @@ public class TouchListener : MonoBehaviour
         {
             foreach (Touch t in Input.touches)
             {
-                Vector3 _tPosition = Camera.main.ScreenToViewportPoint(t.position); 
+                Vector3 _tPosition = Camera.main.ScreenToWorldPoint(t.position); 
 
                 if (t.phase == TouchPhase.Began && _tPosition.y < 15)
                 {
