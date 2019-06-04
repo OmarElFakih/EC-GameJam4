@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour //SINGLETON
 
     public void AddScore(int amount)
     {
-        if (debugging)
+        if (debugging || gameIsOver)
         {
             return;
         }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class URLLOader : MonoBehaviour
 {
-    public string URL;
+    //public string URL;
 
-    public void LadURL()
+    public void LadURL(string URL)
     {
         Application.OpenURL(URL);
     }
