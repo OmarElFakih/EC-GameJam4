@@ -211,8 +211,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1247464398}
-        m_MethodName: Load
+      - m_Target: {fileID: 2006088952}
+        m_MethodName: SceneLoad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -320,6 +320,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'music:
 
+    Tibet by
+
     Jhon Leonard French
 
 '
@@ -389,15 +391,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -119.11065, y: 0, z: -294.88504, w: 0}
+  m_margin: {x: -119.11065, y: 0, z: -300.51407, w: 0}
   m_textInfo:
     textComponent: {fileID: 150376018}
-    characterCount: 27
+    characterCount: 36
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 4
+    spaceCount: 6
+    wordCount: 6
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -641,17 +643,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3800120485809156616, guid: 6a3171f057243294db5c87e5a3ed6ff5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3800120485412456990, guid: 6a3171f057243294db5c87e5a3ed6ff5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3800120486104875645, guid: 6a3171f057243294db5c87e5a3ed6ff5,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -661,12 +653,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3800120486891677772, guid: 6a3171f057243294db5c87e5a3ed6ff5,
+    - target: {fileID: 3800120485741667060, guid: 6a3171f057243294db5c87e5a3ed6ff5,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3800120485741667060, guid: 6a3171f057243294db5c87e5a3ed6ff5,
+    - target: {fileID: 3800120485809156616, guid: 6a3171f057243294db5c87e5a3ed6ff5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800120486104875645, guid: 6a3171f057243294db5c87e5a3ed6ff5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800120486891677772, guid: 6a3171f057243294db5c87e5a3ed6ff5,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -952,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 104}
+  m_AnchoredPosition: {x: -99, y: 104}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052306398
@@ -977,7 +979,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'code:
 
-    omar el fakih
+    omar "kegnor" el fakih
 
 '
   m_isRightToLeft: 0
@@ -1046,13 +1048,13 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -119.11065, y: 0, z: -110.1211, w: 0}
+  m_margin: {x: -119.11065, y: 0, z: -338.09192, w: 0}
   m_textInfo:
     textComponent: {fileID: 1052306398}
-    characterCount: 20
+    characterCount: 29
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 4
+    spaceCount: 5
+    wordCount: 5
     linkCount: 0
     lineCount: 2
     pageCount: 1
@@ -1330,7 +1332,6 @@ GameObject:
   - component: {fileID: 1247464396}
   - component: {fileID: 1247464395}
   - component: {fileID: 1247464394}
-  - component: {fileID: 1247464398}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1422,23 +1423,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1247464398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247464393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b58044143afe348962de7fc577cf2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreText: {fileID: 0}
-  _barFill: {fileID: 0}
-  gameoverScreen: {fileID: 0}
-  _pausedGameElements: []
-  _unpausedGameElements: []
 --- !u!1 &1947039973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,3 +1497,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947039973}
   m_CullTransparentMesh: 0
+--- !u!1 &2006088951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006088953}
+  - component: {fileID: 2006088952}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2006088952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006088951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1919f5fe1ac9040b7c46a281daf101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2006088953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006088951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 695.1716, y: 465.07935, z: -36.371227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

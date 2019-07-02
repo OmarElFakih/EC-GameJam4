@@ -12,6 +12,9 @@ public class CanvasManager : MonoBehaviour
     private TextMeshProUGUI _scoreText = null;
 
     [SerializeField]
+    private TextMeshProUGUI _highScoreText = null;
+
+    [SerializeField]
     private Image _barFill = null;
 
     
@@ -28,6 +31,12 @@ public class CanvasManager : MonoBehaviour
     {
         GM = GameManager.manager;
         GM.cManager = this;
+        
+    }
+
+    private void Start()
+    {
+        _highScoreText.text = "high score: " + GM.maxscore;
     }
 
 
@@ -60,6 +69,11 @@ public class CanvasManager : MonoBehaviour
 
     public void PauseRoutine()
     {
+        if (GameManager.gameIsOver)
+        {
+            return;
+        }
+
         if (Time.timeScale == 1)
         {
             ActivateElements(_unpausedGameElements, false);

@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour //SINGLETON
    /* [SerializeField]
     private int _mainGameIndex = 0; */
 
-    private int _maxscore = 0;
+    public int maxscore = 0;
     private int _hits = 0;
 
     private bool _canPlayClip = true;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour //SINGLETON
     {
         gameIsOver = false;
         highScore = false;
-        _maxscore = PlayerPrefs.GetInt("MaxScore");
+        maxscore = PlayerPrefs.GetInt("MaxScore");
         _currentScore = 0;
         _currentHealth = _maxHealth;
         if (cManager != null)
@@ -73,11 +73,12 @@ public class GameManager : MonoBehaviour //SINGLETON
         }
     }
 
-    public void GameOver()
+    public IEnumerator GameOver()
     {
+        yield return new WaitForEndOfFrame();
         gameIsOver = true;
 
-        highScore = _currentScore > _maxscore;
+        highScore = _currentScore > maxscore;
         if (highScore)
         {
             PlayerPrefs.SetInt("MaxScore", _currentScore);
@@ -113,13 +114,6 @@ public class GameManager : MonoBehaviour //SINGLETON
 
     public void AddScore(int amount)
     {
-        if (debugging || gameIsOver)
-        {
-            return;
-        }
-
-        _currentScore += amount;
-         cManager.UpdateScore(_currentScore);
 
         _hits++;
 
@@ -128,11 +122,30 @@ public class GameManager : MonoBehaviour //SINGLETON
             AudioSource.PlayClipAtPoint(_tripleScoreClip, Camera.main.transform.position);
             _hits = 0;
         }
+
+        if (CantProceed())
+        {
+            return;
+        }
+
+        _currentScore += amount;
+
+         cManager.UpdateScore(_currentScore);
+
+   
     }
 
     public void Miss()
     {
-        if (debugging)
+        if (_canPlayClip)
+        {
+            _canPlayClip = false;
+            AudioSource.PlayClipAtPoint(_missClip, Camera.main.transform.position);
+            StartCoroutine(RestoreBoolean());
+        }
+
+
+        if (CantProceed())
         {
             return;
         }
@@ -146,15 +159,9 @@ public class GameManager : MonoBehaviour //SINGLETON
 
         if (_currentHealth == 0)
         {
-            GameOver();
+            StartCoroutine(GameOver());
         }
 
-        if (_canPlayClip)
-        {
-            _canPlayClip = false;
-            AudioSource.PlayClipAtPoint(_missClip, Camera.main.transform.position);
-            StartCoroutine(RestoreBoolean());
-        }
        
     }
 
@@ -162,6 +169,13 @@ public class GameManager : MonoBehaviour //SINGLETON
     {
         yield return new WaitForSeconds(.2f);
         _canPlayClip = true;
+    }
+
+
+    private bool CantProceed()
+    {
+
+        return (debugging || gameIsOver);
     }
 
 }

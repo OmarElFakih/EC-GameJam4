@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
+
+
     [SerializeField]
     private TextMeshProUGUI _scoreText = null;
 
